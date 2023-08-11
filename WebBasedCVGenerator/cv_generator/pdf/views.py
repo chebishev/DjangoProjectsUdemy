@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Profile
 from django.http import HttpResponse
 from django.template import loader
@@ -32,6 +32,7 @@ def accept(request):
             skills=skills
         )
         profile.save()
+        return redirect('list')
 
     return render(request, 'pdf/accept.html')
 
@@ -53,3 +54,8 @@ def resume(request, id):
     response['Content-Disposition'] = 'attachment; filename="resume.pdf"'
 
     return response
+
+
+def list(request):
+    profiles = Profile.objects.all()
+    return render(request, 'pdf/list.html', {'profiles': profiles})
