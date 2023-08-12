@@ -5,6 +5,7 @@ In order of appearance:
 
 1. Web Based CV Generator opens a form that the user fills with data and returns (directly downloads) a pdf file with the result
 - it needs wkhtmltopdf on your device in order the conversion to work (https://github.com/wkhtmltopdf/wkhtmltopdf)
+<<<<<<< HEAD
 
 2. Web Based Site Scraper that searches for link in format https://www.example.com and returns all valid links
 - scraping is done via requests and beautiful soup
@@ -14,3 +15,5 @@ In order of appearance:
 - custom form is used for the search bar in order to show appropriate errors in case of ivalid input
 
 3. To be continued...
+=======
+>>>>>>> 76bba53b9b5890282ddf3194f5c4d4c4f453e20d
