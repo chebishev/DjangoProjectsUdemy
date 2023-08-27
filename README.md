@@ -13,4 +13,10 @@ In order of appearance:
 - bootstrap is used for the "design"
 - custom form is used for the search bar in order to show appropriate errors in case of ivalid input
 
-3. To be continued...
+3. Food Menu App that shows a list of foods and their prices and also which user added the current item
+- the models are connected by foreign key or OneToOneField
+- the food model has CRUD funtionality
+- used pillow to save images as files
+- bootstrap for the design
+- some class based views are used instead of FBV
+- Signals used in order to connect the profile and the user models
