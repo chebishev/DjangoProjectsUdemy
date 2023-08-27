@@ -19,7 +19,7 @@
     <a href="{% url 'index' %}" class="navbar-brand">Food Menu</a>
 
     <div class="nav">
-      <a class="nav-link" href="{% url 'create_item'}">Add Item</a>
+      <a class="nav-link" href="{% url 'create_item' %}">Add Item</a>
       <a class="nav-link" href="#">Delete Item</a>
       <a class="nav-link" href="#">View Item</a>
       {% if user.is_authenticated %}

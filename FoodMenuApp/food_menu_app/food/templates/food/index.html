@@ -1,25 +1,26 @@
 {% extends 'food/base.html' %}
 {% block content %}
 {% for item in item_list %}
-        <div class="row m-5">
-            <div class="col-md-3 offset-md-2">
-                <img class="card" height="200" width="200" src="{{ item.item_image }}"/>
-            </div>
-            <div class="col-md-4">
-                <h3>{{ item.item_name }}</h3>
-                <h5>{{ item.item_desc }}</h5>
-                <h6>${{ item.item_price }}</h6>
-                Added By:<h6>{{ item.user_name }}</h6>
-            </div>
-            <div class="col-md-2">
-                <a href="{% url 'detail' item.id %}" class="btn btn-success">Details</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="offset-md-2 col-md-8">
-                <hr>
-            </div>
-        </div>
- 
-    {% endfor %}
+<div class="row m-5">
+    <div class="col-md-3 offset-md-2">
+        <img class="card" height="200" width="200" src="{{ item.item_image }}" />
+    </div>
+    <div class="col-md-4">
+        <h3>{{ item.item_name }}</h3>
+        <h5>{{ item.item_desc }}</h5>
+        <h6>${{ item.item_price }}</h6>
+
+        Added By:<h6>{{ item.user_name }}</h6>
+    </div>
+    <div class="col-md-2">
+        <a href="{% url 'detail' item.id %}" class="btn btn-success">Details</a>
+    </div>
+</div>
+<div class="row">
+    <div class="offset-md-2 col-md-8">
+        <hr>
+    </div>
+</div>
+
+{% endfor %}
 {% endblock %}
