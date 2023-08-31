@@ -20,3 +20,6 @@ In order of appearance:
 - bootstrap for the design
 - some class based views are used instead of FBV
 - Signals used in order to connect the profile and the user models
+
+4. E-Commerce Site (in progress)
+- the site is still in progress
