@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Products
+from .models import Products, Order
 from django.core.paginator import Paginator
 
 
@@ -23,6 +23,18 @@ def index(request):
 def detail(request, id):
     product = Products.objects.get(id=id)
     return render(request, 'shop/detail.html', {'product': product})
-    
+
+
 def checkout(request):
+    if request.method == 'POST':
+        name = request.POST.get('name', "")
+        email = request.POST.get('email', "")
+        address = request.POST.get('address', "")
+        city = request.POST.get('city', "")
+        state = request.POST.get('state', "")
+        zipcode = request.POST.get('zipcode', "")
+
+        order = Order(name=name, email=email, address=address,
+                      city=city, state=state, zipcode=zipcode)
+        order.save()
     return render(request, 'shop/checkout.html')
