@@ -69,6 +69,7 @@
     </div>
   </div>
 </body>
+
 <script type="text/javascript">
   if (localStorage.getItem('cart') == null) {
     var cart = {};
@@ -76,17 +77,17 @@
   else {
     cart = JSON.parse(localStorage.getItem('cart'));
   }
+  let total = 0;
   for (item in cart) {
     let name = cart[item][1];
     let quantity = cart[item][0];
     let price = cart[item][2];
-    total = total + cart[item][2];
+    total = total + price;
 
-    itemString = `<li class="list-group-item">${name} <span class="badge badge-primary badge-pill">${quantity}</span> <span class="badge badge-warning badge-pill">${price}</li>`;
+    itemString = `<li class="list-group-item"><span class="">${quantity}</span>  of  ${name} <span class="badge badge-warning badge-pill">${price}</li>`;
     $('#item_list').append(itemString);
   }
-  totalPrice = `<li class="list-group-item d-flex justify-content-between align-items-center"><b>Total</b> ${total}</li>`;
-  $('')
+  totalPrice = `<li class="list-group-item d-flex justify-content-between align-items-center"><b>Your total:</b> ${total}</li>`;
   $('#item_list').append(totalPrice);
   $('#items').val(JSON.stringify(cart));
 </script>
