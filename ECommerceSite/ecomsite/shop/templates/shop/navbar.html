@@ -1,0 +1,24 @@
+<div class="row ">
+    <div class="col-md-12">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">E-Shopping</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="cart" data-html="true" type="button" class="btn btn-secondary"
+                            data-container="body" data-toggle="popover" data-placement="bottom" data-content="">
+                            Cart(0)
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
