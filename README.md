@@ -21,5 +21,9 @@ In order of appearance:
 - some class based views are used instead of FBV
 - Signals used in order to connect the profile and the user models
 
-4. E-Commerce Site (in progress)
-- the site is still in progress
+4. E-Commerce Site that has a paginated list of items which can be added to a cart and the 
+information about the order will be stored in the data base.
+The cart itself is implemented using the local storage of the browser
+- search bar is implemented
+- bootstrap 4 is used for the design
+- for the main functionality -> JavaScript, AJAX, and jQuery
