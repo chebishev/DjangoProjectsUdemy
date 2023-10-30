@@ -1,0 +1,28 @@
+{% extends 'common/base.html' %} {% block body %}
+<div class="product-container flex">
+  {% for product in products %}
+  <div class="product shadow-lg w-1/4 rounded m-10">
+    <div class="product-image">
+      <img
+        src="https://i0.wp.com/thinkfirstcommunication.com/wp-content/uploads/2022/05/placeholder-1-1.png"
+        alt=""
+      />
+    </div>
+    <div class="p-5">
+      <div class="font-bold">{{product.name}}</div>
+      <div>{{product.description}}</div>
+      <div class="text-green-700 font-bold">${{product.price}}</div>
+      <div class="mt-5">
+        <a
+          href="{% url 'product_details' product.id %}"
+          class="bg-green-500 text-white px-4 py-2"
+          >View Details</a
+        >
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
+
+<br />
