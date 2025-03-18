@@ -28,3 +28,14 @@ The cart itself is implemented using the local storage of the browser
 - search bar is implemented
 - bootstrap 4 is used for the design
 - for the main functionality -> JavaScript, AJAX, and jQuery
+
+5. Expense Traker (requires Node.js for the Tailwind CSS)
+# It required the following steps:
+-- Install node.js (https://nodejs.org/en/download/)
+-- run npm init -y in the project folder (in my case in the "expense_tracker" folder)
+-- run npm install tailwindcss (it installed 2.2.19 version)
+-- add static folder in your custom app (in my case in the "main_app" folder), so the tree would be main_app/static/main_app/
+-- add src.css to the newly created tree of folders: main_app/static/main_app/src.css
+-- populate the src.css file with the following three lines: @tailwind base; @tailwind utilities; @tailwind components;
+-- update the scripts in your package.json file -> "build": "tailwind build main_app/static/main_app/src.css -o main_app/static/main_app/styles.css" 
+-- run "npm run build" to generate styles.css file in the same folder

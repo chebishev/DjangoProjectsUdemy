@@ -1,0 +1,16 @@
+{
+  "name": "expense_tracker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwind build main_app/static/main_app/src.css -o main_app/static/main_app/styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "tailwindcss": "^2.2.19"
+  }
+}
