@@ -1,5 +1,6 @@
 # UdemyProjects
 9 projects from the "Django Masterclass" course
+(You can see the demo UI for each project in its "screenshots" folder)
 
 In order of appearance:
 
