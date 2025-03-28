@@ -1,6 +1,18 @@
 from django.shortcuts import render
 from .forms import ExpenseForm
-# Create your views here.
+from .models import Expense
+
+
 def index(request):
-    form = ExpenseForm()
-    return render(request, 'main_app/index.html', {'form': form})
+        expenses = Expense.objects.all()
+        if request.method == 'POST':
+            form = ExpenseForm(request.POST)
+            if form.is_valid():
+                form.save()
+        
+        form = ExpenseForm()
+        context = {
+            'form': form, 
+            'expenses': expenses
+            }
+        return render(request, 'main_app/index.html', context)
