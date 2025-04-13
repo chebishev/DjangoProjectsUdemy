@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import ExpenseForm
 from .models import Expense
-
+from django.db.models import Sum
 
 def index(request):
     if request.method == 'POST':
@@ -10,10 +10,13 @@ def index(request):
             expense.save()
     
     expenses = Expense.objects.all()
+    total_expenses = expenses.aggregate(Sum('amount'))
+    print(total_expenses)
     expense_form = ExpenseForm()
     context = {
         'form': expense_form, 
-        'expenses': expenses
+        'expenses': expenses,
+        'total_expenses': total_expenses
         }
     return render(request, 'main_app/index.html', context)
 

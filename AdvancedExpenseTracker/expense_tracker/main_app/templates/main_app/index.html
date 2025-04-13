@@ -61,7 +61,12 @@
             </form>
         </span>
     </div>
+    
     {% endfor %}
+    <div class="px-80 py-5">
+        <hr class="m-10">
+    <span class="font-bold text-green-500">Total: ${{ total_expenses.amount__sum }}</span>
+</div>
 </div>
 
 {% endblock %}
