@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Register the custom apps here:
     'main_app',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
