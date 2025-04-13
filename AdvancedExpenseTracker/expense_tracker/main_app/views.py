@@ -11,7 +11,6 @@ def index(request):
     
     expenses = Expense.objects.all()
     total_expenses = expenses.aggregate(Sum('amount'))
-    print(total_expenses)
     expense_form = ExpenseForm()
     context = {
         'form': expense_form, 
