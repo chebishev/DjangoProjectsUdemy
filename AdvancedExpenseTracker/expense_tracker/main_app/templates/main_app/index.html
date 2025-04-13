@@ -2,7 +2,8 @@
 {% load static %}
 {% block content %}
 
-<h1>Expense Tracker</h1>
+<div class="m-10 font-bold">Add Expense ➕
+</div>
 <form method="POST" class="shadow-lg m-10 rounded-lg">
     {% csrf_token %}
     <div class="form-container px-10 py-10 flex">
@@ -35,9 +36,9 @@
         </div>
     </div>
 </form>
-<div>Expenses</div>
+<div class="m-10 font-bold">Expenses 💵</div>
 <div class="shadow-lg m-10 rounded-lg">
-    <div class="expense-header flex flex-wrap space-x-40">
+    <div class="expense-header flex flex-wrap space-x-40 px-20 py-5">
         <span>Name</span>
         <span>Amount</span>
         <span>Category</span>
@@ -52,11 +53,11 @@
         <span class="font-bold">${{ expense.amount }}</span>
         <span class="font-bold">{{ expense.category }}</span>
         <span class="font-bold">{{ expense.date }}</span>
-        <span class="font-bold"><a href="{% url 'edit' expense.id %}"><img class="h-5" src="{% static 'main_app/edit_icon.png' %}"></a></span>
-        <span class="font-bold">
+        <span class="pl-24"><a href="{% url 'edit' expense.id %}"><img class="h-5" src="{% static 'main_app/images/edit_icon.png' %}"></a></span>
+        <span class="pl-22">
             <form method="POST" action="{% url 'delete' expense.id %}">
                 {% csrf_token %}
-                <button type="submit" name="delete"><img class="h-5" src="{% static 'main_app/delete_icon.png' %}"></button>
+                <button type="submit" name="delete"><img class="h-5" src="{% static 'main_app/images/delete_icon.png' %}"></button>
             </form>
         </span>
     </div>
