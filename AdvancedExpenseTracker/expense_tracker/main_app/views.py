@@ -27,6 +27,7 @@ def index(request):
     weekly_sum = week_data.aggregate(Sum('amount'))
 
     daily_sums = Expense.objects.filter().values('date').order_by('date').annotate(sum=Sum('amount'))
+    category_sums = Expense.objects.filter().values('category').order_by('category').annotate(sum=Sum('amount'))
 
     expense_form = ExpenseForm()
     context = {
@@ -36,7 +37,8 @@ def index(request):
         'yearly_sum': yearly_sum,
         'monthly_sum': monthly_sum,
         'weekly_sum': weekly_sum,
-        'daily_sums': daily_sums
+        'daily_sums': daily_sums, 
+        'category_sums': category_sums
         }
     return render(request, 'main_app/index.html', context)
 
