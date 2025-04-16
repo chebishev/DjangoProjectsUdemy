@@ -104,7 +104,7 @@
         </span>
       </div>
       <div class="flex flex-wrap px-20 py-5">
-        <span class="text-green-500">$ {{ daily_sum.sum|intcomma }}</span>
+        <span class="text-green-500">$ {{ daily_sum.sum }}</span>
       </div>
       {% endfor %}
     </div>
@@ -132,10 +132,11 @@
 <div class="flex">
   <div class="w-1/2 shadow-lg ml-10">
     <h1>Expense spread accross categories</h1>
-    <canvas id="myChart" class="m-10"></canvas>
+    <canvas id="FirstChart" class="m-10"></canvas>
   </div>
   <div class="w-1/2 shadow-lg ml-10">
-
+    <h1>Daily Expense Sum</h1>
+    <canvas id="SecondChart" class="m-10"></canvas>
   </div>
 </div>
 <script src="
@@ -143,15 +144,61 @@ https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js
 "></script>
 
 <script>
-  const ctx = document.getElementById('myChart');
+  const categories = []
+  const categorySums = []
 
-new Chart(ctx, {
+  const dates = []
+  const sums = []
+
+  const categorySumDivs = document.getElementById('category-sum-table').getElementsByTagName('div')
+  
+  for (i = 0; i < categorySumDivs.length; i++){
+    if (i % 2 == 1){
+      categorySums.push(categorySumDivs[i].innerText.replace("$ ", ""))
+    }else{
+      categories.push(categorySumDivs[i].innerText)
+    }
+  }
+
+  const dailySumDivs = document.getElementById('30-day-table').getElementsByTagName('div')
+  
+  for (i = 0; i < dailySumDivs.length; i++){
+    if (i % 2 == 1){
+      sums.push(dailySumDivs[i].innerText.replace("$ ", ""))
+    }else{
+      dates.push(dailySumDivs[i].innerText)
+    }
+  }
+
+  const first_context = document.getElementById('FirstChart');
+  const second_context = document.getElementById('SecondChart');
+
+new Chart(first_context, {
   type: 'pie',
   data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    labels: categories,
     datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
+      label: 'Expense accross categories',
+      data: categorySums,
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+new Chart(second_context, {
+  type: 'line',
+  data: {
+    labels: dates,
+    datasets: [{
+      label: 'Sum of daily expenses',
+      data: sums,
       borderWidth: 1
     }]
   },
