@@ -9,9 +9,10 @@ def index(request):
         expense = ExpenseForm(request.POST)
         if expense.is_valid():
             expense.save()
-    
-    expenses = Expense.objects.all()
-    total_expenses = expenses.aggregate(Sum('amount'))
+
+    # Get all expenses
+    all_expenses = Expense.objects.all()
+    total_expenses = all_expenses.aggregate(Sum('amount'))
 
     last_year = datetime.date.today() - datetime.timedelta(days=365)
     year_data = Expense.objects.filter(date__gt=last_year)
@@ -29,7 +30,7 @@ def index(request):
     expense_form = ExpenseForm()
     context = {
         'form': expense_form, 
-        'expenses': expenses,
+        'all_expenses': all_expenses,
         'total_expenses': total_expenses, 
         'yearly_sum': yearly_sum,
         'monthly_sum': monthly_sum,

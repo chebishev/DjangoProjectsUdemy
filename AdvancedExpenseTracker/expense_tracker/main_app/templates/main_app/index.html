@@ -41,7 +41,7 @@
     <span>Delete</span>
   </div>
   <hr class="m-10" />
-  {% for expense in expenses %}
+  {% for expense in all_expenses %}
   <div class="expense-row flex-wrap px-20 py-5">
     <span class="font-bold">{{ expense.name }}</span>
     <span class="font-bold">${{ expense.amount|intcomma }}</span>
