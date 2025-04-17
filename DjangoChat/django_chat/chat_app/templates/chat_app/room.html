@@ -1,0 +1,7 @@
+{{ chat_room.name }}
+
+<form method="POST">
+    <input type="text" name="message" placeholder="Enter your message">
+    {% csrf_token %}    
+    <button type="submit">Send</button>
+</form>
