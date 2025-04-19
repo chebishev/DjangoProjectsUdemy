@@ -39,3 +39,11 @@ The cart itself is implemented using the local storage of the browser
 -- populate the src.css file with the following three lines: @tailwind base; @tailwind utilities; @tailwind components;
 -- update the scripts in your package.json file -> "build": "tailwind build main_app/static/main_app/src.css -o main_app/static/main_app/styles.css" 
 -- run "npm run build" to generate styles.css file in the same folder
+# Main functionality
+- add expenses with name, value and category.
+- daily, weekly, monthly and total expenses
+- charts for categories and daily expenses (using Chart.js)
+![Alt text](AdvancesExpenseTracker/screenshots/AdvancedExpenseTracker.jpeg)
+
+6. Chat App
+- using channels, uvicorn[standard], js for the websocket connection
