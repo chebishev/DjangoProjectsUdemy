@@ -44,7 +44,7 @@ The cart itself is implemented using the local storage of the browser
 - daily, weekly, monthly and total expenses
 - charts for categories and daily expenses (using Chart.js)
 
-![Image](AdvancesExpenseTracker/screenshots/AdvancedExpenseTracker.jpeg)
+![Image](./AdvancedExpenseTracker/screenshots/AdvancedExpenseTracker.jpeg)
 
 6. Chat App
 - using channels, uvicorn[standard], js for the websocket connection
