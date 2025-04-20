@@ -22,12 +22,16 @@ In order of appearance:
 - some class based views are used instead of FBV
 - Signals used in order to connect the profile and the user models
 
+Screenshots can be found in the corresponding folder (FoodMenuApp/screenshots)
+
 # 4. E-Commerce Site that has a paginated list of items which can be added to a cart and the 
 information about the order will be stored in the data base.
 The cart itself is implemented using the local storage of the browser
 - search bar is implemented
 - bootstrap 4 is used for the design
 - for the main functionality -> JavaScript, AJAX, and jQuery
+
+Screenshots can be found in the corresponding folder (EcommerceSite/screenshots)
 
 # 5. Expense Traker (requires Node.js for the Tailwind CSS)
 
@@ -48,5 +52,5 @@ Main functionality
 
 ![Image](./AdvancedExpenseTracker/screenshots/AdvancedExpenseTracker.jpeg)
 
-6. Chat App
+# 6. Chat App
 - using channels, uvicorn[standard], js for the websocket connection
