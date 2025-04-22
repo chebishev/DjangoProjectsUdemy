@@ -1,6 +1,8 @@
 {{ chat_room.name }}
 <div id="chat-messages">
-
+{% for message in messages %}
+{{ message.username }} : {{ message.message_content }}
+{% endfor %}
 </div>
 <form method="POST">
     <input id="message-input" type="text" name="message" placeholder="Enter your message">
@@ -18,7 +20,7 @@
     chatSocket.onmessage = function(e) {
         const data = JSON.parse(e.data)
         if (data.message){
-            let html = data.username + ': ' + data.message + '<br>'
+            let html = data.username + ' : ' + data.message + '<br>'
             document.getElementById('chat-messages').innerHTML += html
 
         }else{
