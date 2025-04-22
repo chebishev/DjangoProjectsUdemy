@@ -54,3 +54,4 @@ Main functionality
 
 # 6. Chat App
 - using channels, uvicorn[standard], js for the websocket connection
+- because of the specifics of uvicorn, staticfiles are served by whitenoise middleware
