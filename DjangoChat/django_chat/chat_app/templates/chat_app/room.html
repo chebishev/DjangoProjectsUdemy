@@ -1,5 +1,7 @@
 {{ chat_room.name }}
+<div id="chat-messages">
 
+</div>
 <form method="POST">
     <input id="message-input" type="text" name="message" placeholder="Enter your message">
     {% csrf_token %}    
@@ -16,7 +18,9 @@
     chatSocket.onmessage = function(e) {
         const data = JSON.parse(e.data)
         if (data.message){
-            console.log('Received message:', data.message)
+            let html = data.username + ': ' + data.message + '<br>'
+            document.getElementById('chat-messages').innerHTML += html
+
         }else{
             alert('The message is empty')
         }
