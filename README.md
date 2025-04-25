@@ -59,4 +59,5 @@ Main functionality
 - Start page: 127.0.0.1:8000/rooms
 - Start command: uvicorn django_chat.asgi:application --host 127.0.0.1 --port 8000 --reload
 
-![Image](./AdvancedExpenseTracker/screenshots/AdvancedExpenseTracker.jpeg)
+![Image](./DjangoChat/screenshots/mobile_view.png)
+![Image](./DjangoChat/screenshots/full_screen.png)
