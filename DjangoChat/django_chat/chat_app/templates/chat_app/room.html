@@ -3,7 +3,7 @@
     {{ chat_room.name }}
 </div>
 <div id="message-container" class="message-container m-10 overflow-auto h-[700px]">
-    <div id="chat-messages" class="pb-12">
+    <div id="chat-messages">
         {% for message in messages %}
         <div class="message shadow-lg p-3 m-3 rounded-lg w-1/2 bg-blue-300">
             <div class="text-sm text-gray-500">
@@ -15,6 +15,7 @@
             </div>
         </div>
         {% endfor %}
+        <div id="bottom-anchor"></div>
     </div>
 </div>
 
@@ -87,8 +88,7 @@
   };
 
   function scroll(){
-    const messageContainer = document.getElementById("message-container");
-    messageContainer.scrollTop = messageContainer.scrollHeight;
+    document.getElementById("bottom-anchor").scrollIntoView({ behavior: "smooth" });
   }
 
   scroll();

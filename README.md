@@ -56,3 +56,7 @@ Main functionality
 - using channels, uvicorn[standard], js for the websocket connection
 - because of the specifics of uvicorn, staticfiles are served by whitenoise middleware
 - Tailwind CDN for styling
+- Start page: 127.0.0.1:8000/rooms
+- Start command: uvicorn django_chat.asgi:application --host 127.0.0.1 --port 8000 --reload
+
+![Image](./AdvancedExpenseTracker/screenshots/AdvancedExpenseTracker.jpeg)
