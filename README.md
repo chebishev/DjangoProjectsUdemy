@@ -54,3 +54,10 @@ Main functionality
 
 # 6. Chat App
 - using channels, uvicorn[standard], js for the websocket connection
+- because of the specifics of uvicorn, staticfiles are served by whitenoise middleware
+- Tailwind CDN for styling
+- Start page: 127.0.0.1:8000/rooms
+- Start command: uvicorn django_chat.asgi:application --host 127.0.0.1 --port 8000 --reload
+
+![Image](./DjangoChat/screenshots/mobile_view.png)
+![Image](./DjangoChat/screenshots/full_screen.png)
