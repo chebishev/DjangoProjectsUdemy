@@ -63,3 +63,11 @@ Main functionality
 ![Image](./DjangoChat/screenshots/full_screen.png)
 
 # 7. REST API
+- Simple movie database which includes title, duration, rating, genre and image
+- uses Django Rest Framework
+- uses SQLite3 database
+- added 3 endpoints - list movies, show only action movies, and show only comedy movies
+- pillow is used for uploading images
+
+![Image](./REST_API/screenshots/movies_endpoint.jpeg)
+![Image](./REST_API/screenshots/action_endpoint.png)
