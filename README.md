@@ -61,3 +61,5 @@ Main functionality
 
 ![Image](./DjangoChat/screenshots/mobile_view.png)
 ![Image](./DjangoChat/screenshots/full_screen.png)
+
+# 7. REST API
